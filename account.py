@@ -25,7 +25,7 @@ class Account:
             return f"You have successfully withdrawn ! Your new balance {self.balance}"   
 
     def transfer_funds(self,amount):
-        if amount>self.balance:
+        if amount>=self.balance:
             return f"Insufficient funds .The transaction cannot go through"
         else:
             self.withdraw(amount)
@@ -55,8 +55,12 @@ class Account:
         self.name=new_name
         return f"The new account owner is {self.name}"
 
-    # def account_statement(self):
-    #     for transaction in transactions:
+    def account_statement(self):
+       for i in self.deposits:
+        print( f"Deposits{[i]}")
+       for m in self.withdrawals:
+        print(f"Withdrawals{[m]}")
+
 
 
     def interest(self):
